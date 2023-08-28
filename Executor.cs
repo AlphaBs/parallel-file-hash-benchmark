@@ -1,52 +1,17 @@
-
 using Standart.Hash.xxHash;
 
-public class Executor
+public static class Executor
 {
-    public string BaseDir { get; set; } = 
-        Path.Combine(Path.GetTempPath(), "parallel-file-hash-benchmark");
-
-    public int FileCount { get; set; }
-    public int FileSize { get; set; }
-    public int Parallelism { get; set; }
-    public string HashMode { get; set; } = "XXH";
-
-    private string getFilePath(int n) =>
-        Path.Combine(BaseDir, $"{n}.dat");
-
-    public void Setup()
-    {
-        Directory.CreateDirectory(BaseDir);
-        for (int i = 0; i < FileCount; i++)
-        {
-            createRandomFile(getFilePath(i));
-        }
-    }
-
-    private void createRandomFile(string path)
-    {
-        using var fs = File.Create(path);
-
-        var buffer = new byte[1024*256];
-        var written = 0;
-        while (written < FileSize)
-        {
-            Random.Shared.NextBytes(buffer);
-            fs.Write(buffer, 0, Math.Min(buffer.Length, FileSize - written));
-            written += buffer.Length;
-        }
-    }
-
-    public string? Benchmark()
+    public static string? Execute(string id, int fileCount, int parallelism, string hashMode)
     {
         string? dummy = null;
-        Parallel.For(0, FileCount, new ParallelOptions
+        Parallel.For(0, fileCount, new ParallelOptions
         {
-            MaxDegreeOfParallelism = Parallelism
+            MaxDegreeOfParallelism = parallelism
         }, i =>
         {
-            using var fs = File.OpenRead(getFilePath(i));
-            if (HashMode == "XXH")
+            using var fs = File.OpenRead(RandomFileStorage.GetRandomFile(id, i));
+            if (hashMode == "XXH")
                 dummy = computeXXH(fs);
             else
                 dummy = computeMD5(fs);
@@ -54,32 +19,31 @@ public class Executor
         return dummy;
     }
 
-    private string computeMD5(Stream stream)
+    private static string computeMD5(Stream stream)
     {
         using var md5 = System.Security.Cryptography.MD5.Create();
         var result = md5.ComputeHash(stream);
         return BitConverter.ToString(result);
     }
 
-    private string computeXXH(Stream stream)
+    private static string computeXXH(Stream stream)
     {
         var result = xxHash64.ComputeHash(stream);
         return result.ToString();
     }
 
-    public void Cleanup()
+    public static void Cleanup(string id, int fileCount)
     {
-        for (int i = 0; i < FileCount; i++)
+        for (int i = 0; i < fileCount; i++)
         {
             try
             {
-                File.Delete(getFilePath(i));
+                File.Delete(RandomFileStorage.GetRandomFile(id, i));
             }
             catch
             {
 
             }
         }
-        Directory.Delete(BaseDir, true);
     }
 }

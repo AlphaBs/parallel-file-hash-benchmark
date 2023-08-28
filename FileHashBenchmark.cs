@@ -1,62 +1,39 @@
-
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Engines;
 
-[SimpleJob(RunStrategy.Monitoring, iterationCount: 10)]
+[SimpleJob(RunStrategy.Monitoring, iterationCount: 5)]
 public class FileHashBenchmark
 {
     public static string? Dummy;
 
-    Executor executor = null!;
+    public string Id = "default";
+    public int FileSize = 1024 * 64;
+    public int FileCount = 1024 * 8;
+
+    [Params(1, 4, 8, 16)]
+    public int Parallelism { get; set; } = 1;
 
     [IterationSetup]
     public void IterationSetup()
     {
-        executor = new Executor();
-        executor.FileSize = 1024 * 64;
-        executor.FileCount = 1024 * 8;
-        executor.Setup();
+        RandomFileStorage.CreateRandomFiles(Id, FileSize, FileCount);
     }
 
     [Benchmark(Baseline = true)]
     public void BenchmarkMD5()
     {
-        executor.Parallelism = 1;
-        executor.HashMode = "MD5";
-        Dummy = executor.Benchmark();
+        Dummy = Executor.Execute(Id, FileCount, 1, "MD5");
     }
 
     [Benchmark]
-    public void Benchmark1()
+    public void BenchmarkXXH()
     {
-        executor.Parallelism = 1;
-        Dummy = executor.Benchmark();
-    }
-
-    //[Benchmark]
-    public void Benchmark4()
-    {
-        executor.Parallelism = 4;
-        Dummy = executor.Benchmark();
-    }
-
-    //[Benchmark]
-    public void Benchmark8()
-    {
-        executor.Parallelism = 8;
-        Dummy = executor.Benchmark();
-    }
-
-    //[Benchmark]
-    public void Benchmark16()
-    {
-        executor.Parallelism = 16;
-        Dummy = executor.Benchmark();
+        Dummy = Executor.Execute(Id, FileCount, Parallelism, "XXH");
     }
 
     [IterationCleanup]
     public void Cleanup()
     {
-        executor.Cleanup();
+        Executor.Cleanup(Id, FileCount);
     }
 }
