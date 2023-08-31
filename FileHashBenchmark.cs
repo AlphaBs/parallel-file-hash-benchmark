@@ -19,16 +19,16 @@ public class FileHashBenchmark
         RandomFileStorage.CreateRandomFiles(Id, FileSize, FileCount);
     }
 
-    [Benchmark(Baseline = true)]
-    public void BenchmarkMD5()
-    {
-        Dummy = Executor.Execute(Id, FileCount, 1, "MD5");
-    }
-
     [Benchmark]
     public void BenchmarkXXH()
     {
         Dummy = Executor.Execute(Id, FileCount, Parallelism, "XXH");
+    }
+
+    [Benchmark(Baseline = true)]
+    public void BenchmarkMD5()
+    {
+        Dummy = Executor.Execute(Id, FileCount, Parallelism, "MD5");
     }
 
     [IterationCleanup]

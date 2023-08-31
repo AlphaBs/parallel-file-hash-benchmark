@@ -3,4 +3,4 @@
 - OS: Windows 11 22H2
 - CPU: AMD Ryzen PRO 4650U
 - RAM: 16GB
-- SSD: Samsung PM981 512 GB
+- DISK: NVME SSD (Samsung PM981 512 GB)

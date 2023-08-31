@@ -7,7 +7,7 @@ public class FileHashBenchmarkFromPreparedFiles
     public static int FileSize { get; set; } = 1024 * 64;
     public static int FileCount { get; set; } = 1024 * 8;
 
-    [Params(1)]
+    [Params(1, 4, 8, 16)]
     public int Parallelism { get; set; } = 1;
 
     [IterationSetup]

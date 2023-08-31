@@ -1,0 +1,490 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 8 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/ubuntu/git/parallel-file-hash-benchmark/bin/Release/net7.0/b3f2ea6a-7b4d-4055-9756-2422192b17ab
+// command took 3.55 sec and exited with 0
+// start dotnet  build -c Release --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/ubuntu/git/parallel-file-hash-benchmark/bin/Release/net7.0/b3f2ea6a-7b4d-4055-9756-2422192b17ab
+// command took 5.96 sec and exited with 0
+// ***** Done, took 00:00:09 (9.75 sec)   *****
+// Found 8 benchmarks:
+//   FileHashBenchmark.BenchmarkXXH: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=1]
+//   FileHashBenchmark.BenchmarkMD5: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=1]
+//   FileHashBenchmark.BenchmarkXXH: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=4]
+//   FileHashBenchmark.BenchmarkMD5: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=4]
+//   FileHashBenchmark.BenchmarkXXH: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=8]
+//   FileHashBenchmark.BenchmarkMD5: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=8]
+//   FileHashBenchmark.BenchmarkXXH: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=16]
+//   FileHashBenchmark.BenchmarkMD5: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=16]
+
+// **************************
+// Benchmark: FileHashBenchmark.BenchmarkXXH: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=1]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b3f2ea6a-7b4d-4055-9756-2422192b17ab.dll --anonymousPipes 122 124 --benchmarkName "FileHashBenchmark.BenchmarkXXH(Parallelism: 1)" --job "InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1" --benchmarkId 0 in /home/ubuntu/git/parallel-file-hash-benchmark/bin/Release/net7.0/b3f2ea6a-7b4d-4055-9756-2422192b17ab/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.7
+// Runtime=.NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AdvSIMD,AES,CRC32,SHA1,SHA256 VectorSize=128
+// Job: Job-EKOSJE(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1)
+
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 2911784009.00 ns, 2.9118 s/op
+WorkloadActual   2: 1 op, 2688561978.00 ns, 2.6886 s/op
+WorkloadActual   3: 1 op, 2731644842.00 ns, 2.7316 s/op
+WorkloadActual   4: 1 op, 2401867082.00 ns, 2.4019 s/op
+WorkloadActual   5: 1 op, 3137111301.00 ns, 3.1371 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 2911784009.00 ns, 2.9118 s/op
+WorkloadResult   2: 1 op, 2688561978.00 ns, 2.6886 s/op
+WorkloadResult   3: 1 op, 2731644842.00 ns, 2.7316 s/op
+WorkloadResult   4: 1 op, 2401867082.00 ns, 2.4019 s/op
+WorkloadResult   5: 1 op, 3137111301.00 ns, 3.1371 s/op
+
+// AfterAll
+// Benchmark Process 14091 has exited with code 0.
+
+Mean = 2.774 s, StdErr = 0.122 s (4.40%), N = 5, StdDev = 0.273 s
+Min = 2.402 s, Q1 = 2.689 s, Median = 2.732 s, Q3 = 2.912 s, Max = 3.137 s
+IQR = 0.223 s, LowerFence = 2.354 s, UpperFence = 3.247 s
+ConfidenceInterval = [1.722 s; 3.826 s] (CI 99.9%), Margin = 1.052 s (37.91% of Mean)
+Skewness = -0.02, Kurtosis = 1.33, MValue = 2
+
+// ** Remained 7 (87.5%) benchmark(s) to run. Estimated finish 2023-08-30 10:37 (0h 4m from now) **
+// **************************
+// Benchmark: FileHashBenchmark.BenchmarkMD5: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=1]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b3f2ea6a-7b4d-4055-9756-2422192b17ab.dll --anonymousPipes 125 126 --benchmarkName "FileHashBenchmark.BenchmarkMD5(Parallelism: 1)" --job "InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1" --benchmarkId 1 in /home/ubuntu/git/parallel-file-hash-benchmark/bin/Release/net7.0/b3f2ea6a-7b4d-4055-9756-2422192b17ab/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.7
+// Runtime=.NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AdvSIMD,AES,CRC32,SHA1,SHA256 VectorSize=128
+// Job: Job-JFHVMQ(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1)
+
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 4022615884.00 ns, 4.0226 s/op
+WorkloadActual   2: 1 op, 4073549738.00 ns, 4.0735 s/op
+WorkloadActual   3: 1 op, 3915951821.00 ns, 3.9160 s/op
+WorkloadActual   4: 1 op, 3959166509.00 ns, 3.9592 s/op
+WorkloadActual   5: 1 op, 4009810206.00 ns, 4.0098 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 4022615884.00 ns, 4.0226 s/op
+WorkloadResult   2: 1 op, 4073549738.00 ns, 4.0735 s/op
+WorkloadResult   3: 1 op, 3915951821.00 ns, 3.9160 s/op
+WorkloadResult   4: 1 op, 3959166509.00 ns, 3.9592 s/op
+WorkloadResult   5: 1 op, 4009810206.00 ns, 4.0098 s/op
+
+// AfterAll
+// Benchmark Process 14918 has exited with code 0.
+
+Mean = 3.996 s, StdErr = 0.027 s (0.68%), N = 5, StdDev = 0.061 s
+Min = 3.916 s, Q1 = 3.959 s, Median = 4.010 s, Q3 = 4.023 s, Max = 4.074 s
+IQR = 0.063 s, LowerFence = 3.864 s, UpperFence = 4.118 s
+ConfidenceInterval = [3.763 s; 4.229 s] (CI 99.9%), Margin = 0.233 s (5.84% of Mean)
+Skewness = -0.08, Kurtosis = 1.18, MValue = 2
+
+// ** Remained 6 (75.0%) benchmark(s) to run. Estimated finish 2023-08-30 10:37 (0h 4m from now) **
+// **************************
+// Benchmark: FileHashBenchmark.BenchmarkXXH: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=4]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b3f2ea6a-7b4d-4055-9756-2422192b17ab.dll --anonymousPipes 125 126 --benchmarkName "FileHashBenchmark.BenchmarkXXH(Parallelism: 4)" --job "InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1" --benchmarkId 2 in /home/ubuntu/git/parallel-file-hash-benchmark/bin/Release/net7.0/b3f2ea6a-7b4d-4055-9756-2422192b17ab/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.7
+// Runtime=.NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AdvSIMD,AES,CRC32,SHA1,SHA256 VectorSize=128
+// Job: Job-TOBDUL(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1)
+
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 501144479.00 ns, 501.1445 ms/op
+WorkloadActual   2: 1 op, 423204115.00 ns, 423.2041 ms/op
+WorkloadActual   3: 1 op, 456313958.00 ns, 456.3140 ms/op
+WorkloadActual   4: 1 op, 448490677.00 ns, 448.4907 ms/op
+WorkloadActual   5: 1 op, 417402969.00 ns, 417.4030 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 501144479.00 ns, 501.1445 ms/op
+WorkloadResult   2: 1 op, 423204115.00 ns, 423.2041 ms/op
+WorkloadResult   3: 1 op, 456313958.00 ns, 456.3140 ms/op
+WorkloadResult   4: 1 op, 448490677.00 ns, 448.4907 ms/op
+WorkloadResult   5: 1 op, 417402969.00 ns, 417.4030 ms/op
+
+// AfterAll
+// Benchmark Process 15443 has exited with code 0.
+
+Mean = 449.311 ms, StdErr = 14.893 ms (3.31%), N = 5, StdDev = 33.302 ms
+Min = 417.403 ms, Q1 = 423.204 ms, Median = 448.491 ms, Q3 = 456.314 ms, Max = 501.144 ms
+IQR = 33.110 ms, LowerFence = 373.539 ms, UpperFence = 505.979 ms
+ConfidenceInterval = [321.077 ms; 577.546 ms] (CI 99.9%), Margin = 128.234 ms (28.54% of Mean)
+Skewness = 0.48, Kurtosis = 1.42, MValue = 2
+
+// ** Remained 5 (62.5%) benchmark(s) to run. Estimated finish 2023-08-30 10:36 (0h 3m from now) **
+// **************************
+// Benchmark: FileHashBenchmark.BenchmarkMD5: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=4]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b3f2ea6a-7b4d-4055-9756-2422192b17ab.dll --anonymousPipes 125 126 --benchmarkName "FileHashBenchmark.BenchmarkMD5(Parallelism: 4)" --job "InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1" --benchmarkId 3 in /home/ubuntu/git/parallel-file-hash-benchmark/bin/Release/net7.0/b3f2ea6a-7b4d-4055-9756-2422192b17ab/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.7
+// Runtime=.NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AdvSIMD,AES,CRC32,SHA1,SHA256 VectorSize=128
+// Job: Job-JGUUZS(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1)
+
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 1319449114.00 ns, 1.3194 s/op
+WorkloadActual   2: 1 op, 1343097239.00 ns, 1.3431 s/op
+WorkloadActual   3: 1 op, 1347021823.00 ns, 1.3470 s/op
+WorkloadActual   4: 1 op, 1278924062.00 ns, 1.2789 s/op
+WorkloadActual   5: 1 op, 1286998177.00 ns, 1.2870 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 1319449114.00 ns, 1.3194 s/op
+WorkloadResult   2: 1 op, 1343097239.00 ns, 1.3431 s/op
+WorkloadResult   3: 1 op, 1347021823.00 ns, 1.3470 s/op
+WorkloadResult   4: 1 op, 1278924062.00 ns, 1.2789 s/op
+WorkloadResult   5: 1 op, 1286998177.00 ns, 1.2870 s/op
+
+// AfterAll
+// Benchmark Process 15650 has exited with code 0.
+
+Mean = 1.315 s, StdErr = 0.014 s (1.06%), N = 5, StdDev = 0.031 s
+Min = 1.279 s, Q1 = 1.287 s, Median = 1.319 s, Q3 = 1.343 s, Max = 1.347 s
+IQR = 0.056 s, LowerFence = 1.203 s, UpperFence = 1.427 s
+ConfidenceInterval = [1.195 s; 1.436 s] (CI 99.9%), Margin = 0.121 s (9.17% of Mean)
+Skewness = -0.1, Kurtosis = 0.83, MValue = 2
+
+// ** Remained 4 (50.0%) benchmark(s) to run. Estimated finish 2023-08-30 10:36 (0h 2m from now) **
+// **************************
+// Benchmark: FileHashBenchmark.BenchmarkXXH: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=8]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b3f2ea6a-7b4d-4055-9756-2422192b17ab.dll --anonymousPipes 125 126 --benchmarkName "FileHashBenchmark.BenchmarkXXH(Parallelism: 8)" --job "InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1" --benchmarkId 4 in /home/ubuntu/git/parallel-file-hash-benchmark/bin/Release/net7.0/b3f2ea6a-7b4d-4055-9756-2422192b17ab/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.7
+// Runtime=.NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AdvSIMD,AES,CRC32,SHA1,SHA256 VectorSize=128
+// Job: Job-RYJAEM(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1)
+
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 575649114.00 ns, 575.6491 ms/op
+WorkloadActual   2: 1 op, 375850000.00 ns, 375.8500 ms/op
+WorkloadActual   3: 1 op, 377877239.00 ns, 377.8772 ms/op
+WorkloadActual   4: 1 op, 380246667.00 ns, 380.2467 ms/op
+WorkloadActual   5: 1 op, 381073385.00 ns, 381.0734 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 575649114.00 ns, 575.6491 ms/op
+WorkloadResult   2: 1 op, 375850000.00 ns, 375.8500 ms/op
+WorkloadResult   3: 1 op, 377877239.00 ns, 377.8772 ms/op
+WorkloadResult   4: 1 op, 380246667.00 ns, 380.2467 ms/op
+WorkloadResult   5: 1 op, 381073385.00 ns, 381.0734 ms/op
+
+// AfterAll
+// Benchmark Process 15975 has exited with code 0.
+
+Mean = 418.139 ms, StdErr = 39.388 ms (9.42%), N = 5, StdDev = 88.075 ms
+Min = 375.850 ms, Q1 = 377.877 ms, Median = 380.247 ms, Q3 = 381.073 ms, Max = 575.649 ms
+IQR = 3.196 ms, LowerFence = 373.083 ms, UpperFence = 385.868 ms
+ConfidenceInterval = [78.996 ms; 757.283 ms] (CI 99.9%), Margin = 339.144 ms (81.11% of Mean)
+Skewness = 1.07, Kurtosis = 2.08, MValue = 2
+
+// ** Remained 3 (37.5%) benchmark(s) to run. Estimated finish 2023-08-30 10:36 (0h 1m from now) **
+// **************************
+// Benchmark: FileHashBenchmark.BenchmarkMD5: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=8]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b3f2ea6a-7b4d-4055-9756-2422192b17ab.dll --anonymousPipes 125 126 --benchmarkName "FileHashBenchmark.BenchmarkMD5(Parallelism: 8)" --job "InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1" --benchmarkId 5 in /home/ubuntu/git/parallel-file-hash-benchmark/bin/Release/net7.0/b3f2ea6a-7b4d-4055-9756-2422192b17ab/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.7
+// Runtime=.NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AdvSIMD,AES,CRC32,SHA1,SHA256 VectorSize=128
+// Job: Job-HRNNWO(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1)
+
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 893501041.00 ns, 893.5010 ms/op
+WorkloadActual   2: 1 op, 822634583.00 ns, 822.6346 ms/op
+WorkloadActual   3: 1 op, 844323073.00 ns, 844.3231 ms/op
+WorkloadActual   4: 1 op, 849714635.00 ns, 849.7146 ms/op
+WorkloadActual   5: 1 op, 837992708.00 ns, 837.9927 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 893501041.00 ns, 893.5010 ms/op
+WorkloadResult   2: 1 op, 822634583.00 ns, 822.6346 ms/op
+WorkloadResult   3: 1 op, 844323073.00 ns, 844.3231 ms/op
+WorkloadResult   4: 1 op, 849714635.00 ns, 849.7146 ms/op
+WorkloadResult   5: 1 op, 837992708.00 ns, 837.9927 ms/op
+
+// AfterAll
+// Benchmark Process 16394 has exited with code 0.
+
+Mean = 849.633 ms, StdErr = 11.868 ms (1.40%), N = 5, StdDev = 26.538 ms
+Min = 822.635 ms, Q1 = 837.993 ms, Median = 844.323 ms, Q3 = 849.715 ms, Max = 893.501 ms
+IQR = 11.722 ms, LowerFence = 820.410 ms, UpperFence = 867.298 ms
+ConfidenceInterval = [747.446 ms; 951.821 ms] (CI 99.9%), Margin = 102.188 ms (12.03% of Mean)
+Skewness = 0.67, Kurtosis = 1.72, MValue = 2
+
+// ** Remained 2 (25.0%) benchmark(s) to run. Estimated finish 2023-08-30 10:36 (0h 1m from now) **
+// **************************
+// Benchmark: FileHashBenchmark.BenchmarkXXH: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=16]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b3f2ea6a-7b4d-4055-9756-2422192b17ab.dll --anonymousPipes 125 126 --benchmarkName "FileHashBenchmark.BenchmarkXXH(Parallelism: 16)" --job "InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1" --benchmarkId 6 in /home/ubuntu/git/parallel-file-hash-benchmark/bin/Release/net7.0/b3f2ea6a-7b4d-4055-9756-2422192b17ab/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.7
+// Runtime=.NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AdvSIMD,AES,CRC32,SHA1,SHA256 VectorSize=128
+// Job: Job-GFPSZJ(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1)
+
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 477823386.00 ns, 477.8234 ms/op
+WorkloadActual   2: 1 op, 410646927.00 ns, 410.6469 ms/op
+WorkloadActual   3: 1 op, 459670417.00 ns, 459.6704 ms/op
+WorkloadActual   4: 1 op, 381104739.00 ns, 381.1047 ms/op
+WorkloadActual   5: 1 op, 374236094.00 ns, 374.2361 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 477823386.00 ns, 477.8234 ms/op
+WorkloadResult   2: 1 op, 410646927.00 ns, 410.6469 ms/op
+WorkloadResult   3: 1 op, 459670417.00 ns, 459.6704 ms/op
+WorkloadResult   4: 1 op, 381104739.00 ns, 381.1047 ms/op
+WorkloadResult   5: 1 op, 374236094.00 ns, 374.2361 ms/op
+
+// AfterAll
+// Benchmark Process 17507 has exited with code 0.
+
+Mean = 420.696 ms, StdErr = 20.748 ms (4.93%), N = 5, StdDev = 46.394 ms
+Min = 374.236 ms, Q1 = 381.105 ms, Median = 410.647 ms, Q3 = 459.670 ms, Max = 477.823 ms
+IQR = 78.566 ms, LowerFence = 263.256 ms, UpperFence = 577.519 ms
+ConfidenceInterval = [242.051 ms; 599.342 ms] (CI 99.9%), Margin = 178.646 ms (42.46% of Mean)
+Skewness = 0.16, Kurtosis = 0.87, MValue = 2
+
+// ** Remained 1 (12.5%) benchmark(s) to run. Estimated finish 2023-08-30 10:36 (0h 0m from now) **
+// **************************
+// Benchmark: FileHashBenchmark.BenchmarkMD5: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=16]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet b3f2ea6a-7b4d-4055-9756-2422192b17ab.dll --anonymousPipes 125 126 --benchmarkName "FileHashBenchmark.BenchmarkMD5(Parallelism: 16)" --job "InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1" --benchmarkId 7 in /home/ubuntu/git/parallel-file-hash-benchmark/bin/Release/net7.0/b3f2ea6a-7b4d-4055-9756-2422192b17ab/bin/Release/net7.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.13.7
+// Runtime=.NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AdvSIMD,AES,CRC32,SHA1,SHA256 VectorSize=128
+// Job: Job-BRJGHF(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1)
+
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 796173437.00 ns, 796.1734 ms/op
+WorkloadActual   2: 1 op, 792309323.00 ns, 792.3093 ms/op
+WorkloadActual   3: 1 op, 666331198.00 ns, 666.3312 ms/op
+WorkloadActual   4: 1 op, 676535364.00 ns, 676.5354 ms/op
+WorkloadActual   5: 1 op, 727410521.00 ns, 727.4105 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 796173437.00 ns, 796.1734 ms/op
+WorkloadResult   2: 1 op, 792309323.00 ns, 792.3093 ms/op
+WorkloadResult   3: 1 op, 666331198.00 ns, 666.3312 ms/op
+WorkloadResult   4: 1 op, 676535364.00 ns, 676.5354 ms/op
+WorkloadResult   5: 1 op, 727410521.00 ns, 727.4105 ms/op
+
+// AfterAll
+// Benchmark Process 17951 has exited with code 0.
+
+Mean = 731.752 ms, StdErr = 27.536 ms (3.76%), N = 5, StdDev = 61.573 ms
+Min = 666.331 ms, Q1 = 676.535 ms, Median = 727.411 ms, Q3 = 792.309 ms, Max = 796.173 ms
+IQR = 115.774 ms, LowerFence = 502.874 ms, UpperFence = 965.970 ms
+ConfidenceInterval = [494.656 ms; 968.848 ms] (CI 99.9%), Margin = 237.096 ms (32.40% of Mean)
+Skewness = 0.04, Kurtosis = 0.81, MValue = 2
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2023-08-30 10:36 (0h 0m from now) **
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts/results/FileHashBenchmark-report.csv
+  BenchmarkDotNet.Artifacts/results/FileHashBenchmark-report-github.md
+  BenchmarkDotNet.Artifacts/results/FileHashBenchmark-report.html
+
+// * Detailed results *
+FileHashBenchmark.BenchmarkXXH: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=1]
+Runtime = .NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 2.774 s, StdErr = 0.122 s (4.40%), N = 5, StdDev = 0.273 s
+Min = 2.402 s, Q1 = 2.689 s, Median = 2.732 s, Q3 = 2.912 s, Max = 3.137 s
+IQR = 0.223 s, LowerFence = 2.354 s, UpperFence = 3.247 s
+ConfidenceInterval = [1.722 s; 3.826 s] (CI 99.9%), Margin = 1.052 s (37.91% of Mean)
+Skewness = -0.02, Kurtosis = 1.33, MValue = 2
+-------------------- Histogram --------------------
+[2.192 s ; 2.591 s) | @
+[2.591 s ; 3.010 s) | @@@
+[3.010 s ; 3.347 s) | @
+---------------------------------------------------
+
+FileHashBenchmark.BenchmarkMD5: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=1]
+Runtime = .NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 3.996 s, StdErr = 0.027 s (0.68%), N = 5, StdDev = 0.061 s
+Min = 3.916 s, Q1 = 3.959 s, Median = 4.010 s, Q3 = 4.023 s, Max = 4.074 s
+IQR = 0.063 s, LowerFence = 3.864 s, UpperFence = 4.118 s
+ConfidenceInterval = [3.763 s; 4.229 s] (CI 99.9%), Margin = 0.233 s (5.84% of Mean)
+Skewness = -0.08, Kurtosis = 1.18, MValue = 2
+-------------------- Histogram --------------------
+[3.869 s ; 4.037 s) | @@@@
+[4.037 s ; 4.120 s) | @
+---------------------------------------------------
+
+FileHashBenchmark.BenchmarkXXH: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=4]
+Runtime = .NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 449.311 ms, StdErr = 14.893 ms (3.31%), N = 5, StdDev = 33.302 ms
+Min = 417.403 ms, Q1 = 423.204 ms, Median = 448.491 ms, Q3 = 456.314 ms, Max = 501.144 ms
+IQR = 33.110 ms, LowerFence = 373.539 ms, UpperFence = 505.979 ms
+ConfidenceInterval = [321.077 ms; 577.546 ms] (CI 99.9%), Margin = 128.234 ms (28.54% of Mean)
+Skewness = 0.48, Kurtosis = 1.42, MValue = 2
+-------------------- Histogram --------------------
+[411.297 ms ; 462.420 ms) | @@@@
+[462.420 ms ; 526.706 ms) | @
+---------------------------------------------------
+
+FileHashBenchmark.BenchmarkMD5: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=4]
+Runtime = .NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 1.315 s, StdErr = 0.014 s (1.06%), N = 5, StdDev = 0.031 s
+Min = 1.279 s, Q1 = 1.287 s, Median = 1.319 s, Q3 = 1.343 s, Max = 1.347 s
+IQR = 0.056 s, LowerFence = 1.203 s, UpperFence = 1.427 s
+ConfidenceInterval = [1.195 s; 1.436 s] (CI 99.9%), Margin = 0.121 s (9.17% of Mean)
+Skewness = -0.1, Kurtosis = 0.83, MValue = 2
+-------------------- Histogram --------------------
+[1.255 s ; 1.309 s) | @@
+[1.309 s ; 1.357 s) | @@@
+---------------------------------------------------
+
+FileHashBenchmark.BenchmarkXXH: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=8]
+Runtime = .NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 418.139 ms, StdErr = 39.388 ms (9.42%), N = 5, StdDev = 88.075 ms
+Min = 375.850 ms, Q1 = 377.877 ms, Median = 380.247 ms, Q3 = 381.073 ms, Max = 575.649 ms
+IQR = 3.196 ms, LowerFence = 373.083 ms, UpperFence = 385.868 ms
+ConfidenceInterval = [78.996 ms; 757.283 ms] (CI 99.9%), Margin = 339.144 ms (81.11% of Mean)
+Skewness = 1.07, Kurtosis = 2.08, MValue = 2
+-------------------- Histogram --------------------
+[308.248 ms ; 446.064 ms) | @@@@
+[446.064 ms ; 508.047 ms) | 
+[508.047 ms ; 643.251 ms) | @
+---------------------------------------------------
+
+FileHashBenchmark.BenchmarkMD5: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=8]
+Runtime = .NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 849.633 ms, StdErr = 11.868 ms (1.40%), N = 5, StdDev = 26.538 ms
+Min = 822.635 ms, Q1 = 837.993 ms, Median = 844.323 ms, Q3 = 849.715 ms, Max = 893.501 ms
+IQR = 11.722 ms, LowerFence = 820.410 ms, UpperFence = 867.298 ms
+ConfidenceInterval = [747.446 ms; 951.821 ms] (CI 99.9%), Margin = 102.188 ms (12.03% of Mean)
+Skewness = 0.67, Kurtosis = 1.72, MValue = 2
+-------------------- Histogram --------------------
+[815.805 ms ; 873.132 ms) | @@@@
+[873.132 ms ; 913.870 ms) | @
+---------------------------------------------------
+
+FileHashBenchmark.BenchmarkXXH: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=16]
+Runtime = .NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 420.696 ms, StdErr = 20.748 ms (4.93%), N = 5, StdDev = 46.394 ms
+Min = 374.236 ms, Q1 = 381.105 ms, Median = 410.647 ms, Q3 = 459.670 ms, Max = 477.823 ms
+IQR = 78.566 ms, LowerFence = 263.256 ms, UpperFence = 577.519 ms
+ConfidenceInterval = [242.051 ms; 599.342 ms] (CI 99.9%), Margin = 178.646 ms (42.46% of Mean)
+Skewness = 0.16, Kurtosis = 0.87, MValue = 2
+-------------------- Histogram --------------------
+[356.832 ms ; 428.051 ms) | @@@
+[428.051 ms ; 513.433 ms) | @@
+---------------------------------------------------
+
+FileHashBenchmark.BenchmarkMD5: Job-XCGJHB(InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1) [Parallelism=16]
+Runtime = .NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD; GC = Concurrent Workstation
+Mean = 731.752 ms, StdErr = 27.536 ms (3.76%), N = 5, StdDev = 61.573 ms
+Min = 666.331 ms, Q1 = 676.535 ms, Median = 727.411 ms, Q3 = 792.309 ms, Max = 796.173 ms
+IQR = 115.774 ms, LowerFence = 502.874 ms, UpperFence = 965.970 ms
+ConfidenceInterval = [494.656 ms; 968.848 ms] (CI 99.9%), Margin = 237.096 ms (32.40% of Mean)
+Skewness = 0.04, Kurtosis = 0.81, MValue = 2
+-------------------- Histogram --------------------
+[649.610 ms ; 744.131 ms) | @@@
+[744.131 ms ; 843.434 ms) | @@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.13.7, Ubuntu 22.04.2 LTS (Jammy Jellyfish)
+Unknown processor
+.NET SDK 7.0.400
+  [Host]     : .NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD
+  Job-XCGJHB : .NET 7.0.10 (7.0.1023.36312), Arm64 RyuJIT AdvSIMD
+
+InvocationCount=1  IterationCount=5  RunStrategy=Monitoring  
+UnrollFactor=1  
+
+|       Method | Parallelism |       Mean |      Error |    StdDev | Ratio | RatioSD |
+|------------- |------------ |-----------:|-----------:|----------:|------:|--------:|
+| BenchmarkXXH |           1 | 2,774.2 ms | 1,051.7 ms | 273.13 ms |  0.69 |    0.07 |
+| BenchmarkMD5 |           1 | 3,996.2 ms |   233.3 ms |  60.57 ms |  1.00 |    0.00 |
+|              |             |            |            |           |       |         |
+| BenchmarkXXH |           4 |   449.3 ms |   128.2 ms |  33.30 ms |  0.34 |    0.03 |
+| BenchmarkMD5 |           4 | 1,315.1 ms |   120.5 ms |  31.31 ms |  1.00 |    0.00 |
+|              |             |            |            |           |       |         |
+| BenchmarkXXH |           8 |   418.1 ms |   339.1 ms |  88.07 ms |  0.49 |    0.09 |
+| BenchmarkMD5 |           8 |   849.6 ms |   102.2 ms |  26.54 ms |  1.00 |    0.00 |
+|              |             |            |            |           |       |         |
+| BenchmarkXXH |          16 |   420.7 ms |   178.6 ms |  46.39 ms |  0.58 |    0.07 |
+| BenchmarkMD5 |          16 |   731.8 ms |   237.1 ms |  61.57 ms |  1.00 |    0.00 |
+
+// * Hints *
+Outliers
+  FileHashBenchmark.BenchmarkXXH: InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1 -> 1 outlier  was  detected (575.65 ms)
+  FileHashBenchmark.BenchmarkMD5: InvocationCount=1, IterationCount=5, RunStrategy=Monitoring, UnrollFactor=1 -> 1 outlier  was  detected (893.50 ms)
+
+// * Legends *
+  Parallelism : Value of the 'Parallelism' parameter
+  Mean        : Arithmetic mean of all measurements
+  Error       : Half of 99.9% confidence interval
+  StdDev      : Standard deviation of all measurements
+  Ratio       : Mean of the ratio distribution ([Current]/[Baseline])
+  RatioSD     : Standard deviation of the ratio distribution ([Current]/[Baseline])
+  1 ms        : 1 Millisecond (0.001 sec)
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:04:35 (275.87 sec), executed benchmarks: 8
+
+Global total time: 00:04:45 (285.92 sec), executed benchmarks: 8
+// * Artifacts cleanup *
+Artifacts cleanup is finished
